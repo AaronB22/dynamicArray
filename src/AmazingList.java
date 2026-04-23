@@ -17,6 +17,7 @@ public class AmazingList implements StringList {
     }
 
     public void set(int index, String value) {
+        if (index < 0 || index >= size()) throw new IndexOutOfBoundsException();
         if(size()==capacity()){
             arrayResize();
         }
@@ -36,6 +37,7 @@ public class AmazingList implements StringList {
     }
 
     public String remove(int index) {
+        if (index < 0 || index >= size()) throw new IndexOutOfBoundsException();
         String removed = array[index];
         for (int i=index;i<size();i++) {
             array[i] = array[i+1];
