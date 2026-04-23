@@ -12,6 +12,7 @@ public class AmazingList implements StringList {
     }
 
     public String get(int index) {
+        if (index < 0 || index >= size()) throw new IndexOutOfBoundsException();
         return array[index];
     }
 
