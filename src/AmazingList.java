@@ -16,7 +16,13 @@ public class AmazingList implements StringList {
     }
 
     public void set(int index, String value) {
-
+        if(size()==capacity()){
+            arrayResize();
+        }
+        for(int i =size(); i>index;i--){
+            array[i]=array[i-1];
+        }
+        array[index]=value;
     }
 
     public void add(String value) {
