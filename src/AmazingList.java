@@ -23,6 +23,7 @@ public class AmazingList implements StringList {
             array[i]=array[i-1];
         }
         array[index]=value;
+        valueCount++;
     }
 
     public void add(String value) {
