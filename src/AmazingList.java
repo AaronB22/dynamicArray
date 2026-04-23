@@ -35,7 +35,11 @@ public class AmazingList implements StringList {
     }
 
     public String remove(int index) {
-        return "";
+        String removed = array[index];
+        for (int i=index;i<size();i++) {
+            array[i] = array[i+1];
+        }
+        return removed;
     }
 
     public int size() {
