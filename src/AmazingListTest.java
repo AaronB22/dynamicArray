@@ -50,4 +50,17 @@ public class AmazingListTest {
 
         assertEquals("c", actual);
     }
+
+    @Test
+    void testListRemoveAtIndex(){
+        AmazingList list = new AmazingList();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.set(2, "d");
+
+        String actual= list.remove(1);
+        
+        assertEquals("b", actual);
+    }
 }
