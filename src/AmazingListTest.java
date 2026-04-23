@@ -50,6 +50,21 @@ public class AmazingListTest {
 
         assertEquals("c", actual);
     }
+    
+    @Test
+    void testListSetOutOfBounds() {
+        AmazingList list = new AmazingList(4);
+
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.set(2, "d");
+        
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.set(4, "15");
+        });
+
+    }
 
     @Test
     void testListRemoveAtIndex(){
@@ -62,5 +77,27 @@ public class AmazingListTest {
         String actual= list.remove(1);
         
         assertEquals("b", actual);
+    }
+
+    @Test 
+    void testListGet(){
+        AmazingList list = new AmazingList();
+        list.add("a");
+        list.add("b");
+
+        String actual = list.get(1);
+
+        assertEquals("b", actual);
+    }
+    
+    @Test
+    void testListGetOutOfBound() {
+        AmazingList list = new AmazingList();
+        list.add("a");
+        list.add("b");
+
+        assertThrows(IndexOutOfBoundsException.class, ()->{
+            list.get(4);
+        });
     }
 }
