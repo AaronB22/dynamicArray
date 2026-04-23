@@ -36,7 +36,15 @@ public class AmazingList implements StringList {
     }
 
     public int capacity() {
-        return 0;
+        return this.array.length;
+    }
+
+    private void arrayResize(){
+        String[] newArr= new String[capacity()*2];
+        for (int i=0;i<capacity();i++){
+            newArr[i]=array[i];
+        }
+        array=newArr;
     }
 
 }
