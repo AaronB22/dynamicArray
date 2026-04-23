@@ -22,6 +22,17 @@ public class AmazingListTest {
     
         assertEquals(8,actual);
     }
+    @Test
+        void testListSize(){
+            AmazingList list = new AmazingList(8);
+            list.add("b");
+            list.add("y");
+            list.add("t");
+            
+            int actual= list.size();
+
+            assertEquals(3, actual);
+        }
 
     @Test
     void testListSetIndexMatches() {
@@ -78,7 +89,17 @@ public class AmazingListTest {
         
         assertEquals("b", actual);
     }
-
+    @Test
+    void testListRemoveOutOfBounds(){
+        AmazingList list = new AmazingList();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.set(2, "d");
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.remove(10);
+        });
+    }
     @Test 
     void testListGet(){
         AmazingList list = new AmazingList();
